@@ -15,4 +15,4 @@ log = logger.log(__name__)
 
 def home(request):
     with log.enter() as tm:
-        return HttpResponseRedirect('/hello/say/42/')
+        return HttpResponseRedirect('/hello/gw2test/')
