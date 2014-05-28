@@ -53,3 +53,32 @@ def info(request, username=None):
             returnValue(render_to_response('json', {
                 'status': 'error',
             }, status=500))
+
+
+@inlineCallbacks
+def update(request):
+    with log.enter() as tm:
+        sender = None
+	recepient = None
+        apikey = None
+        tips = [
+            { 'username': recepient,
+              'platform': 'gittip',
+              'amount': '0.01',
+            },
+        ]
+        try:
+	    if ((not sender) or (not recepient) or (not apikey)):
+		returnValue(u'No sender/recepient/apikey have been specified')
+            result = yield txgittip.api.tips(username, apikey, tips)
+            returnValue(render_to_response('json', {
+                'status': 'error',
+                'result': result
+            }))
+        except _DefGen_Return:
+            raise
+        except BaseException, ex:
+            log.err(traceback.format_exc())
+            returnValue(render_to_response('json', {
+                'status': 'error',
+            }, status=500))

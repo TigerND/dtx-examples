@@ -13,4 +13,7 @@ urlpatterns = patterns('',
     	{ 'username': None
     	}
     ),
+    url(r'^gittip/update/',
+        'example.views.update'
+    ),
 )
