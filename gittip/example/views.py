@@ -59,7 +59,7 @@ def info(request, username=None):
 def update(request):
     with log.enter() as tm:
         sender = None
-	recepient = None
+        recepient = None
         apikey = None
         tips = [
             { 'username': recepient,
@@ -68,9 +68,9 @@ def update(request):
             },
         ]
         try:
-	    if ((not sender) or (not recepient) or (not apikey)):
-		returnValue(u'No sender/recepient/apikey have been specified')
-            result = yield txgittip.api.tips(username, apikey, tips)
+            if ((not sender) or (not recepient) or (not apikey)):
+                returnValue(u'No sender/recepient/apikey have been specified')
+            result = yield txgittip.api.tips(sender, apikey, tips)
             returnValue(render_to_response('json', {
                 'status': 'error',
                 'result': result
