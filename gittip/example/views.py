@@ -72,7 +72,7 @@ def update(request):
                 returnValue(u'No sender/recepient/apikey have been specified')
             result = yield txgittip.api.tips(sender, apikey, tips)
             returnValue(render_to_response('json', {
-                'status': 'error',
+                'status': 'success',
                 'result': result
             }))
         except _DefGen_Return:
