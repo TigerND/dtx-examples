@@ -10,6 +10,7 @@ setup(
     author_email='tigernwh@gmail.com',
     url='https://github.com/TigerND/dtx-examples',
     install_requires = [
+        'Django>=1.5.1',
         'dtx-core>=0.9.1',
         'gittip-twisted>=0.1.1',
     ],
