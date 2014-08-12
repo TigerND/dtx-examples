@@ -28,21 +28,6 @@ def hello(request):
                 'status': 'success',
                 'result': result,
                 }))
-            '''
-            index = None
-            digest = None
-            for i in range(100000 * 100):
-                m = hashlib.sha256()
-                m.update('Hello World!!!' + str(i))
-                d = m.hexdigest()
-                if (not digest) or (digest > d):
-                    index = i
-                    digest = d
-            returnValue(render_to_response('json', {
-                'index': index,
-                'digest': digest,
-                }))
-            '''
         except _DefGen_Return:
             raise
         except BaseException, ex:
