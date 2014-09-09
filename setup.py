@@ -4,14 +4,14 @@ from setuptools import setup
 
 setup(
     name='dtx-examples',
-    version='0.9.3',
+    version='0.9.',
     description='Django Twisted Extensions - Examples',
     author='Alexander Zykov',
     author_email='tigernwh@gmail.com',
     url='https://github.com/TigerND/dtx-examples',
     install_requires = [
         'Django>=1.5.1',
-        'dtx-core>=0.9.3',
+        'dtx-core>=0.9.5',
         'gittip-twisted>=0.1.1',
         'pyOpenSSL'
     ],
