@@ -180,7 +180,7 @@ PUBLIC_ADDRESSES = [
 
 DTX_WEB_MASTER_SITES = [
     (
-        u'.*/gittip/',
+        u'.*/gratipay/',
         'example.urls',
     ),
     (

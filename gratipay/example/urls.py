@@ -5,15 +5,15 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^gittip/info/(?P<username>.*)/',
+    url(r'^gratipay/info/(?P<username>.*)/',
         'example.views.info'
     ),
-    url(r'^gittip/info/',
+    url(r'^gratipay/info/',
         'example.views.info',
     	{ 'username': None
     	}
     ),
-    url(r'^gittip/update/',
+    url(r'^gratipay/update/',
         'example.views.update'
     ),
 )

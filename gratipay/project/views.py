@@ -15,4 +15,4 @@ log = logger.log(__name__)
 
 def home(request):
     with log.enter() as tm:
-        return HttpResponseRedirect('/gittip/info/')
+        return HttpResponseRedirect('/gratipay/info/')

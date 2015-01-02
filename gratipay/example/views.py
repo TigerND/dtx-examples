@@ -11,7 +11,7 @@ from dtx.core.workflow import *
 from dtx.web.core.serializers import *
 from dtx.web.server import *
 
-import txgittip
+import txgratipay
 
 from dtx.core import logger
 log = logger.log(__name__)
@@ -21,13 +21,13 @@ log = logger.log(__name__)
 def info(request, username=None):
     with log.enter() as tm:
         try:
-    	    requests = [txgittip.api.charts(),
-                        txgittip.api.paydays(),
-                        txgittip.api.stats(),
+    	    requests = [txgratipay.api.charts(),
+                        txgratipay.api.paydays(),
+                        txgratipay.api.stats(),
                        ]
             if (username):
-                requests += [txgittip.api.charts(username),
-                             txgittip.api.public(username),
+                requests += [txgratipay.api.charts(username),
+                             txgratipay.api.public(username),
                             ]
             results = yield gatherResults(requests)
             def extract_results(gcharts, gpaydays, gstats, ucharts=None, upublic=None):
@@ -63,14 +63,14 @@ def update(request):
         apikey = None
         tips = [
             { 'username': recepient,
-              'platform': 'gittip',
+              'platform': 'gratipay',
               'amount': '0.01',
             },
         ]
         try:
             if ((not sender) or (not recepient) or (not apikey)):
                 returnValue(u'No sender/recepient/apikey have been specified')
-            result = yield txgittip.api.tips(sender, apikey, tips)
+            result = yield txgratipay.api.tips(sender, apikey, tips)
             returnValue(render_to_response('json', {
                 'status': 'success',
                 'result': result
