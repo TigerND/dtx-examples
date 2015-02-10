@@ -1,4 +1,6 @@
 ## Django Twisted Extensions - Examples
+
+[![Join the chat at https://gitter.im/TigerND/dtx-examples](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TigerND/dtx-examples?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Django Twisted Extensions - Examples
 
 ## Build & Run
